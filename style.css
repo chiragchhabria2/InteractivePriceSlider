@@ -1,0 +1,188 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/bg-pattern.svg);
+    min-height: 100vh;
+    font-family: 'Manrope' , sans-serif;
+}
+:root {
+ --Empty-Slider-Bar : hsl(224, 65%, 95%);
+ --Bar-Progress: rgb(37, 150, 190);
+ --Empty-toggle-bar :  hsl(223, 50%, 87%);
+ --Discount-text-color : #f86538;
+ --Discount-BG-color : #fcefe8;
+ --Button-BG-color :  hsl(227, 35%, 25%);
+ --Text-color : hsl(225, 20%, 60%);
+}
+header {
+    background-image: url(images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    margin: auto;
+    background-position: center;
+    text-align: center;
+}
+/*- White (Pricing Component Background): hsl (0, 0%, 100%)
+- Very Pale Blue (Main Background): hsl(230, 100%, 99%)
+- Light Grayish Blue (Empty Slider Bar): hsl(224, 65%, 95%)
+- Light Grayish Blue (Toggle Background): hsl(223, 50%, 87%)
+- Grayish Blue (Text): hsl(225, 20%, 60%)
+- Dark Desaturated Blue (Text & CTA Background): hsl(227, 35%, 25%)*/
+h1 {
+    font-size: 2rem;
+}
+#card {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    color: var(--Text-color);
+    background-color: white;
+}
+p {
+    color: hsl(225, 20%, 60%);
+    font-weight: 600;
+}
+#pageviews {
+ text-transform: uppercase;
+}
+
+
+ #pricebar {
+    height: 26px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 80%;
+    
+    height: 13px;
+
+    cursor: pointer;
+    border: 1px solid black;
+    background: var(--Empty-Slider-Bar);
+    border-radius: 25px;
+
+  }
+  #pricebar:focus {
+    outline: none;
+  }
+  #pricebar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: url(/images/icon-slider.svg) no-repeat center var(--Bar-Progress);
+    filter: brightness(2);
+    cursor: pointer;
+    margin-top: -12px;
+
+  }
+ 
+  
+  
+  
+ 
+  #pricebar::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+ 
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: url(/images/icon-slider.svg) no-repeat center var(--Bar-Progress);
+    filter: brightness(2);
+    cursor: pointer;
+  }
+  #pricebar::-moz-range-progress {
+    background: var(--Bar-Progress);
+    height: 13px;
+    border-radius: 25px;
+    filter: brightness(1);
+  }
+   
+
+
+ #discount {
+    background-color: var(--Discount-BG-color);
+    color: var(--Discount-text-color);
+
+ }
+
+ #benefits 
+ {
+  list-style: url(/images/icon-check.svg);
+  list-style-position: inside;
+ }
+
+ #start-trial {
+  background-color: var(--Button-BG-color);
+  color: white;
+  padding: 15px;
+  border-radius: 30px;
+  height: 3rem;
+  margin-top: 15px;
+ }
+
+
+ #amount {
+  font-weight: 800;
+  font-size: 2rem;
+  color: #000000;
+  
+ }
+
+
+#toggle {
+    display: none;
+}
+.switch 
+{
+    width: 60px;
+    height: 25px;
+    display: inline-flex;
+    position: relative;
+    background-color: var(--Empty-toggle-bar);
+    align-items: center;
+    border-radius: 15px;
+    transition: .3s;
+    cursor: pointer;
+}
+.switch::before {
+    position: absolute;
+    left: 3px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+input:checked + .switch {
+    background-color: var(--Bar-Progress)
+}
+input:checked + .switch::before {
+    
+    transform: translateX(35px);
+}
+
+
+@media  screen and (min-width: 14px) {
+  #card {
+   width: 40vw;
+   height: 100vh;
+   
+  }
+  #card-section-2
+  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #benefits {
+    text-align: left;
+    ;
+  }
+ }
